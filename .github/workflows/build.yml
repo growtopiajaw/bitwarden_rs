@@ -17,20 +17,3 @@ jobs:
           git config user.name Growtopia Jaw
           git config user.email growtopiajaw@gmail.com
           bash generate_armv7_binaries.sh
-
-      - name: Get system storage space
-        run: |
-          df -h
-          lsblk
-          blkid
-
-      - name: Run neofetch
-        run: |
-          wget https://github.com/dylanaraps/neofetch/raw/master/neofetch
-          bash neofetch
-
-      - name: Get cpuinfo
-        run: |
-          cat /proc/cpuinfo
-          lsb_release -a
-          uname -a
