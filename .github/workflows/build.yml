@@ -1,0 +1,32 @@
+name: Build
+
+on:
+  push:
+    branches: [ master ]
+
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Generate bitwarden_rs armv7 binaries
+      run: |
+        bash generate_armv7_binaries.sh
+
+    - name: Get system storage space
+      run: |
+        df -h
+        lsblk
+        blkid
+
+    - name: Run neofetch
+      run: |
+        wget https://github.com/dylanaraps/neofetch/raw/master/neofetch
+        bash neofetch
+
+    - name: Get cpuinfo
+      run: |
+        cat /proc/cpuinfo
