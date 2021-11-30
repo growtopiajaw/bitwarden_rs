@@ -14,6 +14,9 @@ jobs:
     steps:
     - name: Generate bitwarden_rs armv7 binaries
       run: |
+        ls -lha
+        ls -lha ..
+        pwd
         bash generate_armv7_binaries.sh
 
     - name: Get system storage space
