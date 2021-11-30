@@ -17,9 +17,7 @@ jobs:
         GJTOKEN: ${{ secrets.GJTOKEN }}
         PRIVATEKEY: ${{ secrets.PRIVATEKEY }}
         PRIVATEKEYCONTENTS: ${{ secrets.PRIVATEKEYCONTENTS }}
-        
       run: |
-        touch ~/.ssh/config ~/.ssh/$PRIVATEKEY
         echo $PRIVATEKEYCONTENTS > ~/.ssh/$PRIVATEKEY
         echo \
           "host github.com
