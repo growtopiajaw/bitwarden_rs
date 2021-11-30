@@ -12,20 +12,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Generate bitwarden_rs armv7 binaries
-      env:
-        GJTOKEN: ${{ secrets.GJTOKEN }}
-        PRIVATEKEY: ${{ secrets.PRIVATEKEY }}
-        PRIVATEKEYCONTENTS: ${{ secrets.PRIVATEKEYCONTENTS }}
-      run: |
-        echo $PRIVATEKEYCONTENTS > ~/.ssh/$PRIVATEKEY
-        echo \
-          "host github.com
-           HostName github.com
-           IdentityFile ~/.ssh/$PRIVATEKEY
-           User git" > ~/.ssh/config
-        git clone git@github.com:growtopiajaw/bitwarden_rs.git
-        cd bitwarden_rs
+    - name: Clone repository and generate bitwarden_rs armv7 binaries
+    - uses: actions/checkout@v2
+    - run: |
+        git config user.name Growtopia Jaw
+        git config user.email growtopiajaw@gmail.com
         bash generate_armv7_binaries.sh
 
     - name: Get system storage space
