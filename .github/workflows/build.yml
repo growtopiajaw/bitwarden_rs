@@ -12,26 +12,26 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Clone repository and generate bitwarden_rs armv7 binaries
-    - uses: actions/checkout@v2
-    - run: |
-        git config user.name Growtopia Jaw
-        git config user.email growtopiajaw@gmail.com
-        bash generate_armv7_binaries.sh
+      - name: Clone repository and generate bitwarden_rs armv7 binaries
+      - uses: actions/checkout@v2
+      - run: |
+          git config user.name Growtopia Jaw
+          git config user.email growtopiajaw@gmail.com
+          bash generate_armv7_binaries.sh
 
-    - name: Get system storage space
-      run: |
-        df -h
+      - name: Get system storage space
+        run: |
+          df -h
         lsblk
-        blkid
+          blkid
 
-    - name: Run neofetch
-      run: |
-        wget https://github.com/dylanaraps/neofetch/raw/master/neofetch
-        bash neofetch
+      - name: Run neofetch
+        run: |
+          wget https://github.com/dylanaraps/neofetch/raw/master/neofetch
+          bash neofetch
 
-    - name: Get cpuinfo
-      run: |
-        cat /proc/cpuinfo
-        lsb_release -a
-        uname -a
+      - name: Get cpuinfo
+        run: |
+          cat /proc/cpuinfo
+          lsb_release -a
+          uname -a
