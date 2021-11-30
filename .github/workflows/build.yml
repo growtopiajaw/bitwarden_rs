@@ -22,7 +22,7 @@ jobs:
       - name: Get system storage space
         run: |
           df -h
-        lsblk
+          lsblk
           blkid
 
       - name: Run neofetch
