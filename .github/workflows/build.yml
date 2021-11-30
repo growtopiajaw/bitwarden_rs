@@ -12,7 +12,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Clone repository and generate bitwarden_rs armv7 binaries
       - uses: actions/checkout@v2
       - run: |
           git config user.name Growtopia Jaw
