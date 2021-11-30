@@ -19,7 +19,7 @@ jobs:
         PRIVATEKEYCONTENTS: ${{ secrets.PRIVATEKEYCONTENTS }}
         
       run: |
-        mkdir ~/.ssh
+        mkdir -p ~/.ssh
         touch ~/.ssh/config ~/.ssh/$PRIVATEKEY
         echo $PRIVATEKEYCONTENTS > ~/.ssh/$PRIVATEKEY
         echo \
