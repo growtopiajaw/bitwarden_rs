@@ -6,7 +6,7 @@ docker cp vw:/web-vault .
 docker rm vw
 sudo apt install p7zip* -y
 rm -rf archive/*
-7z a bitwarden_rs-"$(grep version web-vault/version.json | sed 's/{ "version": "//g' | sed 's/" }//g')".zip vaultwarden web-vault
+7z a -tzip bitwarden_rs-"$(grep version web-vault/version.json | sed 's/{ "version": "//g' | sed 's/" }//g')".zip vaultwarden web-vault
 rm -rf web-vault vaultwarden
 mv bitwarden* archive/
 git add .
