@@ -1,5 +1,4 @@
 #! /bin/bash
-##### trigger
 docker pull --platform linux/arm/v7 vaultwarden/server:alpine
 docker create --name vw vaultwarden/server:alpine
 docker cp vw:/vaultwarden .
